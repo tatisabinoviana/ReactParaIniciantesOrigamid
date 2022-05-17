@@ -1,14 +1,23 @@
 import React from 'react';
 
 const App = () => {
-  const video = React.useRef();
+  const [comentarios, useComentarios] = React.useState(['teste', 'teste2']);
+  const [input, setInput] = React.useState('teste');
 
-  React.useEffect(() => {
-    video.current = 'Teste';
-    console.log(video.current);
-  });
-
-  return <video ref={video} />;
+  return (
+    <div>
+      <ul>
+        {comentarios.map((comentario) => (
+          <li key={comentario}>{comentario}</li>
+        ))}
+        <input
+          type="text"
+          value={input}
+          onChange={({ target }) => setInput(target.value)}
+        />
+      </ul>
+    </div>
+  );
 };
 
 export default App;
