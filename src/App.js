@@ -1,8 +1,15 @@
 import React from 'react';
 
 const App = () => {
-  const [comentarios, useComentarios] = React.useState(['teste', 'teste2']);
-  const [input, setInput] = React.useState('teste');
+  const [comentarios, setComentarios] = React.useState([]);
+  const [input, setInput] = React.useState('');
+  const inputElement = React.useRef();
+
+  function handleClick() {
+    setComentarios([...comentarios, input]);
+    setInput('');
+    inputElement.current.focus();
+  }
 
   return (
     <div>
@@ -10,12 +17,15 @@ const App = () => {
         {comentarios.map((comentario) => (
           <li key={comentario}>{comentario}</li>
         ))}
-        <input
-          type="text"
-          value={input}
-          onChange={({ target }) => setInput(target.value)}
-        />
       </ul>
+      <input
+        type="text"
+        ref={inputElement}
+        value={input}
+        onChange={({ target }) => setInput(target.value)}
+      />
+      <br />
+      <button onClick={handleClick}>Enviar</button>
     </div>
   );
 };
