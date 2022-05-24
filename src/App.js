@@ -1,51 +1,18 @@
 import React from 'react';
 
 const App = () => {
-  const [produto, setProduto] = React.useState('');
-  const [cor, setCor] = React.useState('');
-
-  function handleChange({ target }) {
-    setProduto(target.value);
-  }
+  const [termos, setTermos] = React.useState(false);
   return (
     <form>
-      <h2>Cores</h2>
+      {termos && <p>Aceitou os termos.</p>}
       <label>
         <input
-          type="radio"
-          onChange={({ target }) => setCor(target.value)}
-          name="cor"
-          value="azul"
+          type="checkbox"
+          value="Termos"
+          checked={termos}
+          onChange={({ target }) => setTermos(target.checked)}
         />
-        Azul
-      </label>
-      <label>
-        <input
-          type="radio"
-          onChange={({ target }) => setCor(target.value)}
-          name="cor"
-          value="vermelho"
-        />
-        Vermelho
-      </label>
-      <h2>Produtos</h2>
-      <label>
-        <input
-          type="radio"
-          onChange={handleChange}
-          checked={produto === 'smartphone'}
-          value="smartphone"
-        />
-        Smartphone
-      </label>
-      <label>
-        <input
-          type="radio"
-          onChange={handleChange}
-          checked={produto === 'notebook'}
-          value="notebook"
-        />
-        Notebook
+        Aceito os termos.
       </label>
     </form>
   );
