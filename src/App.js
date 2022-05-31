@@ -51,12 +51,10 @@ const App = () => {
   }
 
   function resultadoFinal() {
-    console.log('Final');
     const corretas = perguntas.filter(
       ({ id, resposta }) => respostas[id] === resposta,
     );
     setResultado(`Você acertou: ${corretas.length} de ${perguntas.length}`);
-    console.log(corretas);
   }
 
   function handleClick() {
