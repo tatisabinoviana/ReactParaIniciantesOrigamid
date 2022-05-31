@@ -50,7 +50,9 @@ const App = () => {
   }
 
   function handleClick() {
-    setSlide(slide + 1);
+    if (slide < perguntas.length) {
+      setSlide(slide + 1);
+    }
   }
   return (
     <form onSubmit={(event) => event.preventDefault()}>
