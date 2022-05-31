@@ -44,14 +44,27 @@ const App = () => {
     p4: '',
   });
   const [slide, setSlide] = React.useState(0);
+  const [resultado, setResultado] = React.useState(null);
 
   function handleChange({ target }) {
     setRespostas({ ...respostas, [target.id]: target.value });
   }
 
+  function resultadoFinal() {
+    console.log('Final');
+    const corretas = perguntas.filter(
+      ({ id, resposta }) => respostas[id] === resposta,
+    );
+    setResultado(`Você acertou: ${corretas.length} de ${perguntas.length}`);
+    console.log(corretas);
+  }
+
   function handleClick() {
-    if (slide < perguntas.length) {
+    if (slide < perguntas.length - 1) {
       setSlide(slide + 1);
+    } else {
+      setSlide(slide + 1);
+      resultadoFinal();
     }
   }
   return (
@@ -65,7 +78,11 @@ const App = () => {
           {...pergunta}
         />
       ))}
-      <button onClick={handleClick}>Próxima</button>
+      {resultado ? (
+        <p>{resultado}</p>
+      ) : (
+        <button onClick={handleClick}>Próxima</button>
+      )}
     </form>
   );
 };
