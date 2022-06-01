@@ -3,7 +3,12 @@
   color: #43c;
 }
 
+@value cor: red;
+@value cor2: blue;
+@value cor3: black;
+
 .preco {
+  color: cor;
   font-weight: bold;
 }
 
