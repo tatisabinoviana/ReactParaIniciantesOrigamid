@@ -19,24 +19,24 @@ const Paragrafo = styled.p`
   color: green;
 `;
 
-const App = () => {
-  function template(value, total) {
-    console.log(value);
-    console.log(total);
-  }
-  const total = 1000;
-  template`Isso é ${total} um teste`;
+const Preco = styled.p`
+  background: ${({ cor }) => cor};
+  color: white;
+`;
 
+const App = () => {
   return (
     <div>
       <ProdutosContainer>
         <Produto>
           <Titulo>Notebook</Titulo>
           <Paragrafo>Meu texto é esse.</Paragrafo>
+          <Preco cor="#84e">R$ 2000</Preco>
         </Produto>
         <Produto>
           <Titulo>Smartphone</Titulo>
           <Paragrafo>Meu texto é esse.</Paragrafo>
+          <Preco cor="#53d956">R$ 1000</Preco>
         </Produto>
       </ProdutosContainer>
     </div>
