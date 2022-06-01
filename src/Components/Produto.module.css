@@ -1,14 +1,11 @@
 .titulo,
 .preco {
   color: #43c;
+  --cor: red;
 }
 
-@value cor: red;
-@value cor2: blue;
-@value cor3: black;
-
 .preco {
-  color: cor;
+  color: var(--cor);
   font-weight: bold;
 }
 
