@@ -20,7 +20,7 @@ const Paragrafo = styled.p`
 `;
 
 const Preco = styled.p`
-  background: ${({ cor }) => cor};
+  background: hsl(${Math.random() * 360}, 100%, 50%);
   color: white;
 `;
 
