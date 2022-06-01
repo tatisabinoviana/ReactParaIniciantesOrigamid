@@ -20,11 +20,22 @@ const Paragrafo = styled.p`
 `;
 
 const App = () => {
+  function template(value, total) {
+    console.log(value);
+    console.log(total);
+  }
+  const total = 1000;
+  template`Isso é ${total} um teste`;
+
   return (
     <div>
       <ProdutosContainer>
         <Produto>
-          <Titulo>Meu título</Titulo>
+          <Titulo>Notebook</Titulo>
+          <Paragrafo>Meu texto é esse.</Paragrafo>
+        </Produto>
+        <Produto>
+          <Titulo>Smartphone</Titulo>
           <Paragrafo>Meu texto é esse.</Paragrafo>
         </Produto>
       </ProdutosContainer>
