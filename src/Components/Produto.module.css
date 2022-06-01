@@ -1,12 +1,16 @@
-.titulo {
+.titulo,
+.preco {
   color: #43c;
 }
 
 .preco {
-  composes: titulo;
   font-weight: bold;
 }
 
 .comprar {
   transform: rotate(90deg) translateY(-120px);
+}
+
+:global .container {
+  max-width: 900ps;
 }
