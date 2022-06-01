@@ -1,11 +1,10 @@
 import React from 'react';
-import Title from './Title';
-import './App.css';
+import Produto from './Components/Produto';
 
 const App = () => {
   return (
-    <div className="container">
-      <Title />
+    <div>
+      <Produto />
     </div>
   );
 };
