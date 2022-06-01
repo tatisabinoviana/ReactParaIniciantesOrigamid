@@ -1,11 +1,9 @@
-.titulo,
-.preco {
+.titulo {
   color: #43c;
-  --cor: red;
 }
 
 .preco {
-  color: var(--cor);
+  composes: titulo;
   font-weight: bold;
 }
 
