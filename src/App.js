@@ -31,6 +31,9 @@ const Comprar = styled.button`
   padding: 0.5rem;
   color: ${({ ativo }) => (ativo ? '#fff' : '#000')};
   cursor: pointer;
+  &:hover {
+    background: tomato;
+  }
 `;
 
 const App = () => {
