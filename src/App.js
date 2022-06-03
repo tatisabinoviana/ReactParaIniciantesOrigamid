@@ -1,18 +1,15 @@
 import React from 'react';
-import Card from 'react-bootstrap/Card';
+import './App.css';
+import Produto from './Produto';
 
 const App = () => {
+  const [ativar, setAtivar] = React.useState(false);
+
   return (
-    <Card bg="dark" text="white" className="m-5" style={{ maxWidth: '18rem' }}>
-      <Card.Header>Notebook</Card.Header>
-      <Card.Body>
-        <Card.Title>R$ 2500</Card.Title>
-        <Card.Text>
-          Texto inicia aqui, com 1Tb, 16bhsbsh akjaakak. DDDe sdkjdjierbbnnnn. E
-          termina aqui. :D
-        </Card.Text>
-      </Card.Body>
-    </Card>
+    <div>
+      <button onClick={() => setAtivar(!ativar)}>Ativar</button>
+      {ativar && <Produto />}
+    </div>
   );
 };
 
