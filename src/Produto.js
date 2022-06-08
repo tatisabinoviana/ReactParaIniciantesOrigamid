@@ -1,8 +1,10 @@
 import React from 'react'
-import { useParams } from 'react-router-dom'
+import { useLocation, useParams } from 'react-router-dom'
 
 const Produto = () => {
   const params = useParams()
+  const location = useLocation()
+  console.log(location)
 
   return (
     <div>
