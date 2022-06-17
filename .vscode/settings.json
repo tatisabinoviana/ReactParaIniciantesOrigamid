@@ -3,5 +3,8 @@
   "files.exclude": {
     ".gitignore": true,
     ".vscode": true
-  }
+  },
+  "files.autoSave": "onFocusChange",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true
 }
