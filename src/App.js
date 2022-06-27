@@ -1,4 +1,5 @@
 import React from 'react';
+import Exemplo from './Exemplo';
 
 function reducer(state, action) {
   switch (action) {
@@ -9,13 +10,6 @@ function reducer(state, action) {
     default:
       throw new Error();
   }
-  // if (action === 'aumentar') {
-  //   return state + 1;
-  // }
-  // if (action === 'diminuir') {
-  //   return state - 1;
-  // }
-  // return new Error('Error action não existe');
 }
 
 const App = () => {
@@ -25,8 +19,8 @@ const App = () => {
     <div>
       <button onClick={() => dispatch('aumentar')}>+</button>
       <button onClick={() => dispatch('diminuir')}>-</button>
-
       <p>{state}</p>
+      <Exemplo />
     </div>
   );
 };
