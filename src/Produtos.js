@@ -13,7 +13,9 @@ class Produtos extends React.Component {
         <h1>{this.props.titulo} :</h1>
         <p>{this.state.contar}</p>
         <button
-          onClick={() => this.setState({ contar: this.state.contar + 1 })}
+          onClick={() =>
+            this.setState(state => ({ contar: this.state.contar + 1 }))
+          }
         >
           Adicionar
         </button>
