@@ -6,19 +6,18 @@ class Produtos extends React.Component {
     this.state = {
       contar: 0
     };
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    this.setState(state => ({ contar: this.state.contar + 1 }));
   }
   render() {
     return (
       <div>
         <h1>{this.props.titulo} :</h1>
         <p>{this.state.contar}</p>
-        <button
-          onClick={() =>
-            this.setState(state => ({ contar: this.state.contar + 1 }))
-          }
-        >
-          Adicionar
-        </button>
+        <button onClick={this.handleClick}>Adicionar</button>
       </div>
     );
   }
