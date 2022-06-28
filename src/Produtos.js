@@ -9,6 +9,18 @@ class Produtos extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
+  componentDidMount() {
+    console.log('Montou agora');
+  }
+
+  componentDidUpdate() {
+    document.title = this.state.contar;
+  }
+
+  componentWillUnmount() {
+    console.log('Saiu da tela');
+  }
+
   handleClick() {
     this.setState(state => ({ contar: this.state.contar + 1 }));
   }
